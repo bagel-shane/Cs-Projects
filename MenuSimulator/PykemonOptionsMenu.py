@@ -2,7 +2,7 @@ import pygame
 
 class PykemonOptionsMenu:
     def __init__(self, screen_width, screen_height):
-        # Set screen dimensions
+        # Set the Width and the Height
         self.screen_width = screen_width
         self.screen_height = screen_height
 

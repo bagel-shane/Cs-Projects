@@ -12,9 +12,7 @@ class MenuSimulator:
         self.height = height
 
         # Background Colors
-        self.sky_color = pygame.image.load(os.path.join('Assets', 'This_Is_a_Game.png')) # Light blue sky
-        self.grass_color = (124, 252, 0) # Green grass
-        self.road_color = (222, 184, 135) # Light tan path
+        self.sky_color = pygame.image.load(os.path.join('MenuSimulator/Assets', 'This_Is_a_Game.png')) # Light blue sky
 
         # Set font size for buttons and for the Title Text
         self.button_font = pygame.font.SysFont('Arial', 32)
@@ -40,7 +38,7 @@ class MenuSimulator:
         self.quit_button = pygame.Rect((self.width - self.button_width) / 2, self.options_button.bottom + self.button_spacing, self.button_width, self.button_height)
 
         # Set up text animations
-        self.title_text = self.title_font.render('Pykemon', True, (255, 255, 255))          #set up the variable to be used later
+        self.title_text = self.title_font.render('Menu', True, (255, 255, 255))          #set up the variable to be used later
         self.title_animation_text = 200
         self.title_animation_check = True
 
