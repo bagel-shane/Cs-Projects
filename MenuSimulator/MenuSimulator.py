@@ -61,8 +61,6 @@ class MenuSimulator:
 
             # Draw background
             self.screen.blit(self.sky_color, (0, 0))
-            # pygame.draw.rect(self.screen, self.grass_color, pygame.Rect(0, self.height - 200, self.width, 200))
-            # pygame.draw.rect(self.screen, self.road_color, pygame.Rect(0, self.height - 100, self.width, 100))
 
             # Draw title
             title_rect = self.title_text.get_rect(center=(self.width / 2, self.title_animation_text))
