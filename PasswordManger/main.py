@@ -1,5 +1,5 @@
 import tkinter as tk
-from Manger import PasswordManagerGUI
+from PasswordManger.Manger import PasswordManagerGUI
 
 if __name__ == "__main__":
     window = tk.Tk()
