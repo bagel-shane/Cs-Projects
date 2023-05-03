@@ -18,9 +18,8 @@ class MenuSimulator:
         self.button_font = pygame.font.SysFont('Arial', 32)
         self.title_font = pygame.font.SysFont('calibri', 96)
         # Set window title
-        pygame.display.set_caption('This Is a Game')
 
-        # Create Pygame screen
+        # Create Menu screen
         self.screen = pygame.display.set_mode((self.width, self.height))
 
         #Pygame intro dialog
@@ -38,7 +37,7 @@ class MenuSimulator:
         self.quit_button = pygame.Rect((self.width - self.button_width) / 2, self.options_button.bottom + self.button_spacing, self.button_width, self.button_height)
 
         # Set up text animations
-        self.title_text = self.title_font.render('Menu', True, (255, 255, 255))          #set up the variable to be used later
+        self.title_text = self.title_font.render('This Is Not a Game', True, (255, 255, 255))          #set up the variable to be used later
         self.title_animation_text = 200
         self.title_animation_check = True
 
@@ -52,11 +51,10 @@ class MenuSimulator:
                     return
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if self.start_button.collidepoint(event.pos):
-                        print('Start button clicked!')
+                        new_menu = PykemonMenu(self.width, self.height)
+                        new_menu.run(self.screen)
                     elif self.options_button.collidepoint(event.pos):
-                        print('Options button clicked!')
-                        options_menu = PykemonMenu(self.width, self.height)
-                        options_menu.run(self.screen)
+                        pass
                     elif self.quit_button.collidepoint(event.pos):
                         pygame.quit()
                         return
@@ -68,19 +66,19 @@ class MenuSimulator:
 
             # Draw title
             title_rect = self.title_text.get_rect(center=(self.width / 2, self.title_animation_text))
-            # if 150 <= self.title_animation_text <= 200 and self.title_animation_check == True: #goes up
-            #     self.title_animation_text = self.title_animation_text - 0.05
+            if 150 <= self.title_animation_text <= 200 and self.title_animation_check == True: #goes up
+                self.title_animation_text = self.title_animation_text - 0.05
 
-            # elif self.title_animation_text < 150:                                      
-            #     self.title_animation_text = self.title_animation_text + 0.05
-            #     self.title_animation_check = False
+            elif self.title_animation_text < 150:                                      
+                self.title_animation_text = self.title_animation_text + 0.05
+                self.title_animation_check = False
 
-            # elif 150 <= self.title_animation_text <= 200 and self.title_animation_check == False: 
-            #     self.title_animation_text = self.title_animation_text + 0.05
+            elif 150 <= self.title_animation_text <= 200 and self.title_animation_check == False: 
+                self.title_animation_text = self.title_animation_text + 0.05
                 
-            # elif self.title_animation_text > 200:
-            #     self.title_animation_text = self.title_animation_text - 0.05
-            #     self.title_animation_check = True
+            elif self.title_animation_text > 200:
+                self.title_animation_text = self.title_animation_text - 0.05
+                self.title_animation_check = True
                 
             self.screen.blit(self.title_text, title_rect)
 
