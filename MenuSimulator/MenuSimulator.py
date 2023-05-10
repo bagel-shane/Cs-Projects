@@ -103,6 +103,4 @@ class MenuSimulator:
             pygame.display.flip()
 
             
-if __name__ == '__main__':
-    menu = MenuSimulator(800, 800)
-    menu.run()
+
